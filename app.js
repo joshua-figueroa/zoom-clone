@@ -27,10 +27,10 @@ io.on("connection", (socket) => {
         socket.join(roomID);
         socket.to(roomID).broadcast.emit("user-connected", userID);
         console.log(`User ${userID} has joined the room`);
+    });
 
-        socket.on("disconnect", () => {
-            console.log(`User ${userID} has leave the room`);
-        });
+    socket.on("disconnect", () => {
+        console.log(`User ${socket.id} has leave the room`);
     });
 });
 
