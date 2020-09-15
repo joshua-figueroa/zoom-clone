@@ -1,9 +1,7 @@
 const socket = io("/");
 const myPeer = new Peer(undefined, {
-    host: "localhost",
+    host: "https://zoom-clone-5fdcf.herokuapp.com",
     path: "/peerjs",
-    port: 5000,
-    trickle: true,
 });
 
 var peers = {};
