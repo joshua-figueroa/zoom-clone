@@ -5,6 +5,7 @@ const server = require("http").Server(app);
 const io = require("socket.io")(server);
 const { ExpressPeerServer } = require("peer");
 const { v4: uuid } = require("uuid");
+const cors = require("cors");
 
 const port = process.env.PORT || 5000;
 const peerServer = ExpressPeerServer(server, { debug: true, path: "/" });
@@ -13,6 +14,7 @@ const users = {};
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
+app.use(cors({ origin: true }));
 app.use("/peerjs", peerServer);
 
 app.get("/", (req, res) => {
