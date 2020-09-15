@@ -1,4 +1,4 @@
-const socket = io("/");
+const socket = io("https://zoom-clone-5fdcf.herokuapp.com");
 const myPeer = new Peer(undefined, {
     host: "https://zoom-clone-5fdcf.herokuapp.com",
     path: "/peerjs",
