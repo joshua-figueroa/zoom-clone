@@ -249,3 +249,7 @@ const systemMessage = (username, join = false) => {
     lists.append(list);
     container.scrollTop = container.scrollHeight;
 };
+
+const handleInvite = () => {
+    alert(`Invite people to your room:\n\nRoom ID: ${ROOM_ID}\nCopy this link to join: ${window.location.href}`);
+};
